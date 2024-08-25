@@ -61,7 +61,7 @@ function App(){
 
 function Header() {
   return (
-    <h1>Fast React Pizza Co.</h1>
+    <h1 style={{color: 'red'}}>Fast React Pizza Co.</h1>
   )
 }
 
