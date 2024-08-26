@@ -72,16 +72,38 @@ function Header() {
   )
 }
 
+//Parent Component
 function Menu() {
   return (
     <main className='menu'>
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza name='Pizza Spinaci' 
+      ingredients='Tomato, mozarella, spinach, and ricotta cheese'
+      photoName='pizzas/spinaci.jpg'
+      price={10}
+      />
+
+      <Pizza name='Pizza Funghi' ingredients='Tomato, mushrooms' price={12}
+      photoName='pizzas/funghi.jpg'
+      />
     </main>
   )
+}
+
+//Child component
+function Pizza(props) {
+  console.log(props)
+    
+  return (
+    <div className='pizza'>
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+      </div>
+      <span>{props.price}</span>
+    </div> 
+  );
 }
 
 function Footer() {
@@ -99,16 +121,6 @@ function Footer() {
       {new Date().toLocaleTimeString()} We're currently open
     </footer>
   )
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="" />
-      <h3>Pizza Spinaci</h3>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div> 
-  );
 }
 
 
