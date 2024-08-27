@@ -62,12 +62,10 @@ function App(){
 
 function Header() {
 //const style = {color: 'red', fontSize: "48px", textTransform: "uppercase"};
-
-  const style = {};
   
   return (
     <header className='header'>
-        <h1 style={style}>Fast React Pizza Co.</h1>
+        <h1>Fast React Pizza Co.</h1>
     </header>
   )
 }
@@ -92,8 +90,6 @@ function Menu() {
 
 //Child component
 function Pizza(props) {
-  console.log(props)
-    
   return (
     <div className='pizza'>
       <img src={props.photoName} alt={props.name} />
