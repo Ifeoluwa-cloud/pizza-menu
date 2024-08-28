@@ -75,7 +75,14 @@ function Menu() {
   return (
     <main className='menu'>
       <h2>Our Menu</h2>
-      <Pizza name='Pizza Spinaci' 
+
+      <div>
+            {pizzaData.map((pizza) => 
+              <Pizza key={pizza.name} name={pizza.name} />
+            )}
+      </div>
+
+      {/* <Pizza name='Pizza Spinaci' 
       ingredients='Tomato, mozarella, spinach, and ricotta cheese'
       photoName='pizzas/spinaci.jpg'
       price={10}
@@ -83,7 +90,7 @@ function Menu() {
 
       <Pizza name='Pizza Funghi' ingredients='Tomato, mushrooms' price={12}
       photoName='pizzas/funghi.jpg'
-      />
+      /> */}
     </main>
   )
 }
