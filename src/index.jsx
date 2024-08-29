@@ -76,11 +76,11 @@ function Menu() {
     <main className='menu'>
       <h2>Our Menu</h2>
 
-      <div>
-            {pizzaData.map((pizza) => 
-              <Pizza key={pizza.name} name={pizza.name} />
-            )}
-      </div>
+      <ul className='pizzas'>
+            {pizzaData.map((pizza) => (
+              <Pizza key={pizza.name} pizzaObj={pizza} />
+            ))}
+      </ul>
 
       {/* <Pizza name='Pizza Spinaci' 
       ingredients='Tomato, mozarella, spinach, and ricotta cheese'
@@ -98,20 +98,20 @@ function Menu() {
 //Child component
 function Pizza(props) {
   return (
-    <div className='pizza'>
-      <img src={props.photoName} alt={props.name} />
+    <li className='pizza'>
+      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.ingredients}</p>
+        <h3>{props.pizzaObj.name}</h3>
+        <p>{props.pizzaObj.ingredients}</p>
       </div>
-      <span>{props.price}</span>
-    </div> 
+      <span>{props.pizzaObj.price}</span>
+    </li> 
   );
 }
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 8;
+  const openHour = 12;
   const closeHour = 20;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
@@ -121,9 +121,17 @@ function Footer() {
 
   return (
     <footer className='footer'>
-      {new Date().toLocaleTimeString()} We're currently open
+        {isOpen && (
+          <div className='order'>
+              <p>
+                  We're open until the {closeHour}:00. Come visit us or order online.
+              </p> 
+              <button className='btn'>Order</button>
+          </div>
+        )}
     </footer>
-  )
+  );
+
 }
 
 
