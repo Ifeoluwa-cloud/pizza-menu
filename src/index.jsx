@@ -120,22 +120,23 @@ function Pizza(props) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 8;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
-  //if(hour >= openHour && hour <= closeHour) alert("We're currently open!"); 
-  //else alert("Sorry we're closed");
-
-  //if (!isOpen) return <p>CLOSED</p>;
+  /*
+        if(hour >= openHour && hour <= closeHour) alert("We're currently open!"); 
+      //else alert("Sorry we're closed");
+      //if (!isOpen) return <p>CLOSED</p>;
+  */
 
   return (
-    <footer className='footer'>
+<footer className='footer'>
         {isOpen ? (
           <Order closeHours = {closeHour}/>
         ) : (<p>
-                  We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+                  Happy to welcome you between {openHour}:00 and {closeHour}:00.
               </p> 
         )}
     </footer>
