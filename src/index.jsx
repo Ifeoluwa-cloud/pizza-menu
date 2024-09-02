@@ -114,7 +114,7 @@ function Pizza({ pizzaObj }) {
         <p>{pizzaObj.ingredients}</p>
       </div>
       <span>${pizzaObj.price}</span>
-    </li> 
+    </li>
   );
 }
 
