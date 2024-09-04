@@ -51,7 +51,7 @@ const pizzaData = [
 function App(){
   return (
     <div className='container'>
-      <h1>Hey! Pizza is here</h1>
+      <h1>Hey👋, Yummy Pizza 🍕 is here!</h1>
       <Header />
       <Menu />
       <Footer />
