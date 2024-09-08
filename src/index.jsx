@@ -143,8 +143,9 @@ function Footer() {
 <footer className='footer'>
         {isOpen ? (
           <Order closeHours = {closeHour}/>
-        ) : (<p>
-                  Happy to welcome you between {openHour}:00 and {closeHour}:00.
+        ) : (
+              <p>
+                  Happy to welcome you between {openHour}:00 and {closeHour}:00 to Fast Yummy Pizza.
               </p> 
         )}
     </footer>
